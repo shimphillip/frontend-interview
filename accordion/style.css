@@ -1,0 +1,36 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.accordions {
+  margin: 0 auto;
+  width: 600px;
+  list-style: none;
+}
+
+.accordion {
+  width: 100%;
+}
+
+.panel {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  background-color: white;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.panel::after {
+  content: '+';
+  position: absolute;
+  right: 1rem;
+}
+
+.panel-content {
+  max-height: 0;
+  overflow: hidden;
+}
