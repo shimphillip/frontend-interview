@@ -1,39 +1,24 @@
-// const accordion = document.querySelector('.accordion')
-
-// const clickHandler = (e) => {
-//   const accordionTitle = e.target
-//   const isAccordionTitle = accordionTitle.classList.contains('accordion-title')
-
-//   if (!isAccordionTitle) {
-//     return
-//   }
-
-//   accordionTitle.classList.toggle('is-open')
-//   const accordionContent = accordionTitle.nextElementSibling
-
-//   if (accordionContent.style.maxHeight) {
-//     accordionContent.style.maxHeight = null
-//   } else {
-//     accordionContent.style.maxHeight = accordionContent.scrollHeight
-//   }
-// }
-
-// accordion.addEventListener('click', clickHandler)
-
 const accordion = document.querySelector('.accordion')
 
-accordion.addEventListener('click', (event) => {
-  const element = event.target
+const clickHandler = (e) => {
+  const accordionTitle = e.target
+  const isAccordionTitle = accordionTitle.classList.contains('accordion-title')
 
-  if (element.classList[0] === 'accordion-title') {
-    element.classList.toggle('is-open')
-    const content = element.nextElementSibling
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null
-    } else {
-      content.style.maxHeight = content.scrollHeight + 'px'
-    }
+  if (!isAccordionTitle) {
+    return
   }
-})
 
-// then toggle aria hidden and expanded
+  accordionTitle.classList.toggle('is-open')
+  const accordionContent = accordionTitle.nextElementSibling
+
+  if (accordionContent.style.maxHeight) {
+    console.log('here')
+    accordionContent.style.maxHeight = null
+  } else {
+    console.log('there')
+
+    accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px'
+  }
+}
+
+accordion.addEventListener('click', clickHandler)
