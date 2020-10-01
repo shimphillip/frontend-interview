@@ -12,11 +12,8 @@ const clickHandler = (e) => {
   const accordionContent = accordionTitle.nextElementSibling
 
   if (accordionContent.style.maxHeight) {
-    console.log('here')
     accordionContent.style.maxHeight = null
   } else {
-    console.log('there')
-
     accordionContent.style.maxHeight = accordionContent.scrollHeight + 'px'
   }
 }
