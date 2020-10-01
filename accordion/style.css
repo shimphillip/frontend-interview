@@ -4,33 +4,46 @@
   box-sizing: border-box;
 }
 
-.accordions {
-  margin: 0 auto;
-  width: 600px;
+body {
+  background-color: #ccc;
+}
+
+ul {
   list-style: none;
 }
 
 .accordion {
-  width: 100%;
+  width: 80%;
+  max-width: 800px;
+  margin: 20px auto;
 }
 
-.panel {
-  width: 100%;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-  background-color: white;
-  outline: none;
-  cursor: pointer;
+.accordion-title {
   position: relative;
+  width: 100%;
+  border: none;
+  outline: none;
+  text-align: left;
+  font-size: 2rem;
+  padding: 1rem;
+  cursor: pointer;
+  border-bottom: 1px solid #aaa;
 }
 
-.panel::after {
+.accordion-title::after {
   content: '+';
   position: absolute;
   right: 1rem;
+  transition: 0.2s linear;
 }
 
-.panel-content {
-  max-height: 0;
+.accordion-title.is-open::after {
+  transform: rotate(45deg);
+}
+
+.accordion-content {
+  font-size: 1.1rem;
+  background-color: #aaa;
+  max-height: 0px;
   overflow: hidden;
 }
