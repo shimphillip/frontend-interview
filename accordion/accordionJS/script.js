@@ -3,11 +3,11 @@ const accordion = document.querySelector('.accordion')
 const clickHandler = (e) => {
   const accordionTitle = e.target
   const isAccordionTitle = accordionTitle.classList.contains('accordion-title')
-
   if (!isAccordionTitle) {
     return
   }
 
+  // rotate the + button
   accordionTitle.classList.toggle('is-open')
   const accordionContent = accordionTitle.nextElementSibling
 
