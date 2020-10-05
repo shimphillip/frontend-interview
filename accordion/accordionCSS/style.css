@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   max-width: 100%;
 }
@@ -94,4 +94,42 @@ h1 {
 .toggle:checked + .title:before {
   -webkit-transform: rotate(90deg) !important;
   transform: rotate(90deg) !important;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+.checkbox {
+  display: none;
+}
+
+.title {
+  position: relative;
+}
+
+.title::after {
+  content: '+';
+  position: absolute;
+  right: -6px;
+  width: 5px;
+  height: 5px;
+  transition: 0.2s;
+}
+
+.content {
+  max-height: 0;
+  overflow: hidden;
+}
+.checkbox:checked + .title::after {
+  transform: rotate(-45deg);
+}
+
+.checkbox:checked + .title + .content {
+  max-height: 500px;
 }
